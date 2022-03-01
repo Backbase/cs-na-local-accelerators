@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/common-foundation/fonts-loader",
+  "sourceRoot": "libs/common-foundation/fonts-loader/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/common-foundation/fonts-loader/src/test.ts",
+        "tsConfig": "libs/common-foundation/fonts-loader/tsconfig.spec.json",
+        "karmaConfig": "libs/common-foundation/fonts-loader/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/common-foundation/fonts-loader/src/**/*.ts",
+          "libs/common-foundation/fonts-loader/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
