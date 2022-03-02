@@ -38,5 +38,5 @@ export const appModuleImports = [
     projectName: 'backbase-retail-prototypes',
     serviceRoot: '/api/remote-config',
   }),
-  FontsLoaderModule
+  FontsLoaderModule,
 ];
