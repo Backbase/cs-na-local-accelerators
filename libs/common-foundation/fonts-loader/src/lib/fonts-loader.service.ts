@@ -23,7 +23,25 @@ export class FontsLoaderService {
         },
         [],
       );
-      Promise.allSettled(promises).then((data) => {
+
+      // the code below is a backward compatible polyfill for Promise.allSettled
+      const _promises = promises.map((p) => {
+        return p
+          .then((value) => {
+            return {
+              status: 'fulfilled',
+              value,
+            };
+          })
+          .catch((reason) => {
+            return {
+              status: 'rejected',
+              reason,
+            };
+          });
+      });
+
+      Promise.all(_promises).then((data) => {
         resolve();
       });
     });

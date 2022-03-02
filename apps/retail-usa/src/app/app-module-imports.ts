@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { RetailModule } from './retail/retail.module';
 import { environment } from '../environments/environment';
+import { FontsLoaderModule } from '@backbase/common-foundation-fonts-loader';
 
 /**
  * Modules in this array are added to the `imports` array of the AppModule
@@ -37,4 +38,5 @@ export const appModuleImports = [
     projectName: 'backbase-retail-prototypes',
     serviceRoot: '/api/remote-config',
   }),
+  FontsLoaderModule
 ];
