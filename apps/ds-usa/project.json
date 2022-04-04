@@ -1,0 +1,92 @@
+{
+  "projectType": "application",
+  "root": "apps/ds-usa",
+  "sourceRoot": "apps/ds-usa/src",
+  "prefix": "bb",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ds-usa",
+        "index": "apps/ds-usa/src/index.html",
+        "main": "apps/ds-usa/src/main.ts",
+        "polyfills": "apps/ds-usa/src/polyfills.ts",
+        "tsConfig": "apps/ds-usa/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/ds-usa/src/favicon.ico", "apps/ds-usa/src/assets"],
+        "styles": ["apps/ds-usa/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ds-usa/src/environments/environment.ts",
+              "with": "apps/ds-usa/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ds-usa:build:production"
+        },
+        "development": {
+          "browserTarget": "ds-usa:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ds-usa:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/ds-usa/src/**/*.ts", "apps/ds-usa/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/ds-usa/src/test.ts",
+        "tsConfig": "apps/ds-usa/tsconfig.spec.json",
+        "karmaConfig": "apps/ds-usa/karma.conf.js",
+        "polyfills": "apps/ds-usa/src/polyfills.ts",
+        "styles": [],
+        "scripts": [],
+        "assets": []
+      }
+    }
+  },
+  "tags": []
+}

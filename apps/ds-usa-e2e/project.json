@@ -1,0 +1,28 @@
+{
+  "root": "apps/ds-usa-e2e",
+  "sourceRoot": "apps/ds-usa-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ds-usa-e2e/cypress.json",
+        "devServerTarget": "ds-usa:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ds-usa:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ds-usa-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ds-usa"]
+}
