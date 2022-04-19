@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/designsystem-styleguide-button",
+  "sourceRoot": "libs/designsystem-styleguide-button/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/designsystem-styleguide-button/src/test.ts",
+        "tsConfig": "libs/designsystem-styleguide-button/tsconfig.spec.json",
+        "karmaConfig": "libs/designsystem-styleguide-button/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/designsystem-styleguide-button/src/**/*.ts",
+          "libs/designsystem-styleguide-button/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

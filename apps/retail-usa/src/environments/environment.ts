@@ -45,7 +45,7 @@ export const authConfig: (baseUrl: string) => AuthConfig = (_baseUrl: string = '
   issuer: 'https://identity.ret-us-l.rnd.live.backbaseservices.com/auth/realms/backbase',
 
   // URL of the SPA to redirect the user to after login
-  redirectUri: document.location.origin + '/select-context',
+  redirectUri: document.location.origin + '/styleguide',
 
   // The SPA's id. The SPA is registered with this id at the auth-server
   clientId: 'bb-web-client',

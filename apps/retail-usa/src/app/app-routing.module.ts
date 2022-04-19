@@ -270,6 +270,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('../journeys/consent/bundle-consent-journey.module').then((m) => m.ConsentJourneyBundleModule),
   },
+  {
+    path: 'styleguide',
+    loadChildren: () => import('@backbase/designsystem-styleguide').then((m) => m.DesignsystemStyleguideModule),
+  },
   { path: '**', pathMatch: 'full', redirectTo: 'my-accounts' },
 ];
 
