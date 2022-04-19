@@ -7,11 +7,11 @@ import { RouterModule } from '@angular/router';
     CommonModule,
 
     RouterModule.forChild([
-      {
-        path: 'button',
-        loadChildren: () =>
-          import('@backbase/designsystem-styleguide-button').then((m) => m.DesignsystemStyleguideButtonModule),
-      },
+//      {
+//        path: 'button',
+//        loadChildren: () =>
+//          import('@backbase/designsystem-styleguide-button').then((m) => m.DDSButtonModule),
+//      },
       { path: '**', pathMatch: 'full', redirectTo: 'button' },
     ]),
   ],

@@ -1,10 +1,10 @@
 import { async, TestBed } from '@angular/core/testing';
-import { DesignsystemStyleguideButtonModule } from './designsystem-styleguide-button.module';
+import { DdsButtonJourneyModule } from './dds-button-journey.module';
 
-describe('DesignsystemStyleguideButtonModule', () => {
+describe('DdsButtonJourneyModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [DesignsystemStyleguideButtonModule],
+      imports: [DdsButtonJourneyModule],
     }).compileComponents();
   }));
 
@@ -13,6 +13,6 @@ describe('DesignsystemStyleguideButtonModule', () => {
   // NB: This particular test does not do anything useful.
   //     It does NOT check for correct instantiation of the module.
   it('should have a module definition', () => {
-    expect(DesignsystemStyleguideButtonModule).toBeDefined();
+    expect(DdsButtonJourneyModule).toBeDefined();
   });
 });

@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/dds-button-journey",
+  "sourceRoot": "libs/dds-button-journey/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/dds-button-journey/src/test.ts",
+        "tsConfig": "libs/dds-button-journey/tsconfig.spec.json",
+        "karmaConfig": "libs/dds-button-journey/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/dds-button-journey/src/**/*.ts", "libs/dds-button-journey/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
