@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/designsystem-styleguide",
+  "sourceRoot": "libs/designsystem-styleguide/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/designsystem-styleguide/src/test.ts",
+        "tsConfig": "libs/designsystem-styleguide/tsconfig.spec.json",
+        "karmaConfig": "libs/designsystem-styleguide/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/designsystem-styleguide/src/**/*.ts", "libs/designsystem-styleguide/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

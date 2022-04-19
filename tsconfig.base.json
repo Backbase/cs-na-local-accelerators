@@ -18,7 +18,8 @@
     "esModuleInterop": true,
     "paths": {
       "@backbase/common-banking": ["libs/common-banking/src/index.ts"],
-      "@backbase/common-foundation-fonts-loader": ["libs/common-foundation/fonts-loader/src/index.ts"]
+      "@backbase/common-foundation-fonts-loader": ["libs/common-foundation/fonts-loader/src/index.ts"],
+      "@backbase/designsystem-styleguide": ["libs/designsystem-styleguide/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
