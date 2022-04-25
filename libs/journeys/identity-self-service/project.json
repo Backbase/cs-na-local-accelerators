@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/journeys/identity-self-service",
+  "sourceRoot": "libs/journeys/identity-self-service/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/journeys/identity-self-service/src/test.ts",
+        "tsConfig": "libs/journeys/identity-self-service/tsconfig.spec.json",
+        "karmaConfig": "libs/journeys/identity-self-service/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/journeys/identity-self-service/src/**/*.ts",
+          "libs/journeys/identity-self-service/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
