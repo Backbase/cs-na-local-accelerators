@@ -13,6 +13,7 @@ import {
 } from '@backbase/identity-self-service-journey-ang';
 import { DeepPartial } from '@backbase/identity-common-ang';
 
+import { HeaderModule, ButtonModule } from '@backbase/ui-ang';
 import { UserIdentitySecurityCenterWidgetModule } from '@backbase/user-identity-security-center-widget-ang';
 import { UserIdentitySecurityCenterComponent } from './user-identity-security-center/user-identity-security-center.component';
 
@@ -78,6 +79,8 @@ const customRoute = {
   imports: [
     CommonModule,
     IdentitySelfServiceJourneyModule.forRoot({ route: customRoute }),
+    HeaderModule,
+    ButtonModule,
     UserIdentitySecurityCenterWidgetModule,
   ],
   providers: [ProfileConfigProvider],
