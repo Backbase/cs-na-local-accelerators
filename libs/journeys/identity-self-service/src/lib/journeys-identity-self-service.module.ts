@@ -17,6 +17,8 @@ import { HeaderModule, ButtonModule } from '@backbase/ui-ang';
 import { UserIdentitySecurityCenterWidgetModule } from '@backbase/user-identity-security-center-widget-ang';
 import { UserIdentitySecurityCenterComponent } from './user-identity-security-center/user-identity-security-center.component';
 
+import { InputNewPasswordModule } from '@backbase/common-ui-input-new-password';
+
 const ProfileConfigProvider: Provider = {
   provide: IdentitySelfServiceJourneyConfigurationToken,
   useValue: {
@@ -82,6 +84,7 @@ const customRoute = {
     HeaderModule,
     ButtonModule,
     UserIdentitySecurityCenterWidgetModule,
+    InputNewPasswordModule,
   ],
   providers: [ProfileConfigProvider],
   declarations: [UserIdentitySecurityCenterComponent],
