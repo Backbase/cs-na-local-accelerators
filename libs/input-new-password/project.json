@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/input-new-password",
+  "sourceRoot": "libs/input-new-password/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/input-new-password/src/test.ts",
+        "tsConfig": "libs/input-new-password/tsconfig.spec.json",
+        "karmaConfig": "libs/input-new-password/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/input-new-password/src/**/*.ts", "libs/input-new-password/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

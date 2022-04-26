@@ -3,69 +3,147 @@
 >
 </bb-user-identity-security-center-widget>
 
-<!--
 <ng-template bbUserIdentitySecurityCenterChangePasswordForm let-hostRef>
   <div *ngIf="hostRef.form">
     <div class="bb-block bb-block--lg">
-      <bb-header-ui headingType="h3" heading="Change Password" i18n-heading="Header for changing a users password@@bb-user-identity-security-center-widget.bb-header-ui"> </bb-header-ui>
+      <bb-header-ui
+        headingType="h3"
+        heading="Change Password"
+        i18n-heading="Header for changing a users password@@bb-user-identity-security-center-widget.bb-header-ui"
+      >
+      </bb-header-ui>
     </div>
-    <div class="bb-block bb-block--lg" i18n="Label for current password description@@bb-user-identity-security-center-widget.current-password-description"> To change your password, we must verify your current one first. </div>
+    <div
+      class="bb-block bb-block--lg"
+      i18n="
+        Label for current password description@@bb-user-identity-security-center-widget.current-password-description"
+    >
+      To change your password, we must verify your current one first.
+    </div>
     <form [formGroup]="hostRef.form" (submit)="hostRef.onSubmit()">
       <div data-role="identity-security-center-change-password-form">
         <div class="bb-block bb-block--xl">
-          <bb-input-password-ui class="bb-form-field bb-form-field--md" label="Current password" i18n-label="Current password input label|Label text for current password input@@bb-user-identity-security-center-widget.current-password-input-label" formControlName="currentPassword" [autofocus]="true" maxLength="255" data-role="identity-security-center-current-password-input"> </bb-input-password-ui>
-          <bb-input-validation-message-ui [showErrors]="hostRef.showErrors(hostRef.form.controls.currentPassword)"> <span *ngIf="hostRef.form.controls.currentPassword.errors?.required" data-role="identity-security-center-current-password-error" i18n="Error message for blank current password field|Error message requiring password for current password field@@bb-user-identity-security-center-widget.current-password-blank-error-message"> You must enter your current password </span> </bb-input-validation-message-ui>
+          <bb-input-password-ui
+            class="bb-form-field bb-form-field--md"
+            label="Current password"
+            i18n-label="
+              Current password input label|Label text for current password
+              input@@bb-user-identity-security-center-widget.current-password-input-label"
+            formControlName="currentPassword"
+            [autofocus]="true"
+            maxLength="255"
+            data-role="identity-security-center-current-password-input"
+          >
+          </bb-input-password-ui>
+          <bb-input-validation-message-ui [showErrors]="hostRef.showErrors(hostRef.form.controls.currentPassword)">
+            <span
+              *ngIf="hostRef.form.controls.currentPassword.errors?.required"
+              data-role="identity-security-center-current-password-error"
+              i18n="
+                Error message for blank current password field|Error message requiring password for current password
+                field@@bb-user-identity-security-center-widget.current-password-blank-error-message"
+            >
+              You must enter your current password
+            </span>
+          </bb-input-validation-message-ui>
         </div>
-        <ng-container bbUserIdentitySecurityCenterWidgetPasswordPolicyCustomizable [bbHostRef]="hostRef"></ng-container>
         <div class="form-group">
-          <bb-input-password-ui class="bb-form-field bb-form-field--md" label="New password" formControlName="inputNewPassword" maxLength="255" data-role="identity-security-center-new-password-input" i18n-label="New password input label|Label text for new password input@@bb-user-identity-security-center-widget.new-password-input-label"> </bb-input-password-ui>
-          <bb-input-validation-message-ui [showErrors]="hostRef.showErrors(hostRef.form.controls.inputNewPassword)"> <span *ngIf="hostRef.form.controls.inputNewPassword.errors?.required" data-role="identity-security-center-new-password-error" i18n="Error message for blank new password field|Error message requiring password for new password field@@bb-user-identity-security-center-widget.new-password-blank-error-message"> You must enter a new password </span> <span *ngIf="hostRef.form.controls.inputNewPassword.errors?.usedPassword" data-role="identity-security-center-old-password-error" i18n="Error message for current password matching new password field|Error message requiring unique password for new password field@@bb-user-identity-security-center-widget.new-password-unique-error-message"> New password must be different to current password </span> </bb-input-validation-message-ui>
+          <bb-input-password-ui
+            class="bb-form-field bb-form-field--md"
+            label="New password"
+            formControlName="inputNewPassword"
+            maxLength="255"
+            data-role="identity-security-center-new-password-input"
+            i18n-label="
+              New password input label|Label text for new password
+              input@@bb-user-identity-security-center-widget.new-password-input-label"
+          >
+          </bb-input-password-ui>
+          <bb-input-validation-message-ui [showErrors]="hostRef.showErrors(hostRef.form.controls.inputNewPassword)">
+            <span
+              *ngIf="hostRef.form.controls.inputNewPassword.errors?.required"
+              data-role="identity-security-center-new-password-error"
+              i18n="
+                Error message for blank new password field|Error message requiring password for new password
+                field@@bb-user-identity-security-center-widget.new-password-blank-error-message"
+            >
+              You must enter a new password
+            </span>
+            <span
+              *ngIf="hostRef.form.controls.inputNewPassword.errors?.usedPassword"
+              data-role="identity-security-center-old-password-error"
+              i18n="
+                Error message for current password matching new password field|Error message requiring unique password
+                for new password field@@bb-user-identity-security-center-widget.new-password-unique-error-message"
+            >
+              New password must be different to current password
+            </span>
+          </bb-input-validation-message-ui>
         </div>
         <div class="bb-block bb-block--lg">
-          <bb-input-password-ui class="bb-form-field bb-form-field--md" label="Confirm new password" formControlName="confirmNewPassword" maxLength="255" data-role="identity-security-center-confirm-password-input" i18n-label="Confirm password input label|Label text for confirm password input@@bb-user-identity-security-center-widget.confirm-password-input-label"> </bb-input-password-ui>
-          <bb-input-validation-message-ui [showErrors]="hostRef.showErrors(hostRef.form.controls.confirmNewPassword)"> <span *ngIf="hostRef.form.controls.confirmNewPassword.errors?.mismatched" data-role="identity-security-center-confirm-password-mismatch-error" i18n="Error message for mismatch passwords|Error message for mismatch passwords for confirm new password field@@bb-user-identity-security-center-widget.confirm-password-mismatch-error-message"> Passwords don't match </span> <span *ngIf="hostRef.form.controls.confirmNewPassword.errors?.required" data-role="identity-security-center-confirm-password-blank-error" i18n="Error message for blank password|Error message for blank password for confirm new password field@@bb-user-identity-security-center-widget.confirm-password-blank-error-message"> You must re-type your new password </span> </bb-input-validation-message-ui>
+          <bb-input-password-ui
+            class="bb-form-field bb-form-field--md"
+            label="Confirm new password"
+            formControlName="confirmNewPassword"
+            maxLength="255"
+            data-role="identity-security-center-confirm-password-input"
+            i18n-label="
+              Confirm password input label|Label text for confirm password
+              input@@bb-user-identity-security-center-widget.confirm-password-input-label"
+          >
+          </bb-input-password-ui>
+          <bb-input-validation-message-ui [showErrors]="hostRef.showErrors(hostRef.form.controls.confirmNewPassword)">
+            <span
+              *ngIf="hostRef.form.controls.confirmNewPassword.errors?.mismatched"
+              data-role="identity-security-center-confirm-password-mismatch-error"
+              i18n="
+                Error message for mismatch passwords|Error message for mismatch passwords for confirm new password
+                field@@bb-user-identity-security-center-widget.confirm-password-mismatch-error-message"
+            >
+              Passwords don't match
+            </span>
+            <span
+              *ngIf="hostRef.form.controls.confirmNewPassword.errors?.required"
+              data-role="identity-security-center-confirm-password-blank-error"
+              i18n="
+                Error message for blank password|Error message for blank password for confirm new password
+                field@@bb-user-identity-security-center-widget.confirm-password-blank-error-message"
+            >
+              You must re-type your new password
+            </span>
+          </bb-input-validation-message-ui>
         </div>
       </div>
       <div class="bb-button-bar--reverse">
-        <bb-load-button-ui class="bb-button-bar__button" color="primary" button-size="md" data-role="password-form-change-password-button" type="submit" i18n="Change password button|Text for change password button@@bb-user-identity-security-center-widget.change-password-button-text" [isLoading]="hostRef.isSubmitting"> Change Password </bb-load-button-ui> <button bbButton class="bb-button-bar__button" color="secondary" button-size="md" data-role="identity-security-center-cancel-button" (click)="hostRef.closePasswordModal()" (mousedown)="hostRef.closePasswordModal()" type="button" i18n="Cancel password button|Text for cancel password button@@bb-user-identity-security-center-widget.cancel-password-button-text"> Cancel </button>
+        <bb-load-button-ui
+          class="bb-button-bar__button"
+          color="primary"
+          button-size="md"
+          data-role="password-form-change-password-button"
+          type="submit"
+          i18n="
+            Change password button|Text for change password
+            button@@bb-user-identity-security-center-widget.change-password-button-text"
+          [isLoading]="hostRef.isSubmitting"
+        >
+          Change Password
+        </bb-load-button-ui>
+        <button
+          bbButton
+          class="bb-button-bar__button"
+          color="secondary"
+          button-size="md"
+          data-role="identity-security-center-cancel-button"
+          (click)="hostRef.closePasswordModal()"
+          (mousedown)="hostRef.closePasswordModal()"
+          type="button"
+          i18n="
+            Cancel password button|Text for cancel password
+            button@@bb-user-identity-security-center-widget.cancel-password-button-text"
+        >
+          Cancel
+        </button>
       </div>
     </form>
-  </div>
-</ng-template>
--->
-<ng-template bbUserIdentitySecurityCenterWidgetPasswordPolicyCustomizable let-hostRef>
-  <div class="bb-block bb-block--lg">
-    <div
-      class="bb-block bb-block--lg"
-      i18n="Text for password form description@@bb-user-identity-security-center-widget.password-form-text"
-    >
-      Your new password must contain:
-    </div>
-    <ul>
-      <li
-        i18n="
-          Text for minimum length password policy bullet
-          point@bb-user-identity-security-center-widget.password-form-policy-length
-        "
-      >
-        A minimum of 6 characters
-      </li>
-      <li
-        i18n="
-          Text for uppercase password policy bullet
-          point@bb-user-identity-security-center-widget.password-form-policy-uppercase
-        "
-      >
-        At least one UPPERCASE letter
-      </li>
-      <li
-        i18n="
-          Text for lowercase password policy bullet
-          point@bb-user-identity-security-center-widget.password-form-policy-lowecase
-        "
-      >
-        At least one lowercase letter
-      </li>
-    </ul>
   </div>
 </ng-template>
