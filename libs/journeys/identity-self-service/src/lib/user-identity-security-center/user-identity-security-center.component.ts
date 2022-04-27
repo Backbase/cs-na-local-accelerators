@@ -12,14 +12,14 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 export class UserIdentitySecurityCenterComponent extends UserIdentitySecurityCenterViewComponent {
   fields: FormlyFieldConfig[] = [
     {
-      fieldGroupClassName: 'row mb-2 mt-4',
+      fieldGroupClassName: 'd-block',
       fieldGroup: [
         {
           key: 'inputNewPassword',
-          className: 'col-12 col-lg-8 pb-3',
+          className: 'bb-form-field bb-form-field--md bb-block bb-block--xl',
           type: 'new-password',
           templateOptions: {
-            label: $localize`Create A Password`,
+            label: $localize`New password`,
             required: true,
             showVisibilityControl: true,
             confirm: false, // "true" is for "confirm password" mode
@@ -27,10 +27,10 @@ export class UserIdentitySecurityCenterComponent extends UserIdentitySecurityCen
         },
         {
           key: 'confirmNewPassword', // key must be different from the "new pasword" field's key
-          className: 'col-12 col-lg-8 pb-3',
+          className: 'bb-form-field bb-form-field--md bb-block bb-block--xl',
           type: 'new-password',
           templateOptions: {
-            label: $localize`Confirm Password`,
+            label: $localize`Confirm password`,
             required: true,
             showVisibilityControl: true,
             confirm: true, // "true" is for "confirm password" mode
