@@ -22,7 +22,7 @@ export enum Validation {
 export function passwordsMatchValidator(control: AbstractControl) {
   const form: FormGroup | FormArray = control.parent;
   if (form) {
-    const compareToKey = 'new-password'; // "new-password" is a "key" value matching the one from Formly fieldGroup
+    const compareToKey = 'inputNewPassword'; // "new-password" is a "key" value matching the one from Formly fieldGroup
     const confirmValue = form.get(compareToKey).value;
     if (control.value === confirmValue) {
       return null;
