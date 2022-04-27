@@ -163,9 +163,7 @@ const routes: Routes = [
           {
             path: 'profile',
             loadChildren: () =>
-              import('../journeys/self-service/bundle-profile-journey.module').then(
-                (m) => m.SelfServiceJourneyBundleModule,
-              ),
+              import('@backbase/journeys-identity-self-service').then((m) => m.JourneysIdentitySelfServiceModule),
           },
           {
             path: 'authorized-users',

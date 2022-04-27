@@ -75,6 +75,8 @@
     "@ng-select/ng-select": "~7.3.0",
     "@ngrx/effects": "~12.5.1",
     "@ngrx/store": "~12.5.1",
+    "@ngx-formly/bootstrap": "^5.12.1",
+    "@ngx-formly/core": "^5.12.1",
     "@nrwl/angular": "13.7.1",
     "@swimlane/ngx-charts": "~19.2.0",
     "@types/css-font-loading-module": "^0.0.7",
