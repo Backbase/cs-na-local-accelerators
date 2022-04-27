@@ -17,7 +17,21 @@ import { HeaderModule, ButtonModule } from '@backbase/ui-ang';
 import { UserIdentitySecurityCenterWidgetModule } from '@backbase/user-identity-security-center-widget-ang';
 import { UserIdentitySecurityCenterComponent } from './user-identity-security-center/user-identity-security-center.component';
 
-import { InputNewPasswordModule } from '@backbase/common-ui-input-new-password';
+import { FormlyModule } from '@ngx-formly/core';
+import {
+  InputNewPasswordModule,
+  InputNewPasswordComponent,
+  InputNewPasswordConfigurationToken,
+  InputNewPasswordConfiguration,
+} from '@backbase/common-ui-input-new-password';
+import {
+  passwordHasNumberValidator,
+  passwordHasSpecialCharacterValidator,
+  passwordHasUppercaseValidator,
+  passwordsMatchValidator,
+  passwordsMinLengthValidator,
+  Validation,
+} from './validators';
 
 const ProfileConfigProvider: Provider = {
   provide: IdentitySelfServiceJourneyConfigurationToken,
@@ -85,8 +99,59 @@ const customRoute = {
     ButtonModule,
     UserIdentitySecurityCenterWidgetModule,
     InputNewPasswordModule,
+    FormlyModule.forChild({
+      types: [
+        {
+          name: 'new-password',
+          component: InputNewPasswordComponent,
+        },
+      ],
+      validators: [
+        { name: Validation.PasswordMinLength, validation: passwordsMinLengthValidator },
+        { name: Validation.PasswordHasNumber, validation: passwordHasNumberValidator },
+        { name: Validation.PasswordHasUppercase, validation: passwordHasUppercaseValidator },
+        { name: Validation.PasswordHasSpecialCharacter, validation: passwordHasSpecialCharacterValidator },
+        { name: Validation.PasswordsMatch, validation: passwordsMatchValidator },
+      ],
+    }),
   ],
-  providers: [ProfileConfigProvider],
+  providers: [
+    ProfileConfigProvider,
+    {
+      provide: InputNewPasswordConfigurationToken,
+      useValue: <InputNewPasswordConfiguration>{
+        requirementIcon: 'success',
+        validators: [
+          {
+            label: $localize`At least 8 characters`,
+            name: Validation.PasswordMinLength,
+            validation: passwordsMinLengthValidator,
+          },
+          {
+            label: $localize`Include a number`,
+            name: Validation.PasswordHasNumber,
+            validation: passwordHasNumberValidator,
+          },
+          {
+            label: $localize`Include an uppercase`,
+            name: Validation.PasswordHasUppercase,
+            validation: passwordHasUppercaseValidator,
+          },
+          {
+            label: $localize`Include a special character`,
+            name: Validation.PasswordHasSpecialCharacter,
+            validation: passwordHasSpecialCharacterValidator,
+          },
+          {
+            label: $localize`Passwords match`,
+            name: Validation.PasswordsMatch,
+            validation: passwordsMatchValidator,
+            confirm: true,
+          },
+        ],
+      },
+    },
+  ],
   declarations: [UserIdentitySecurityCenterComponent],
 })
 export class JourneysIdentitySelfServiceModule {}
