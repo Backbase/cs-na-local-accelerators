@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/journeys/cards-management",
+  "sourceRoot": "libs/journeys/cards-management/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/journeys/cards-management/src/test.ts",
+        "tsConfig": "libs/journeys/cards-management/tsconfig.spec.json",
+        "karmaConfig": "libs/journeys/cards-management/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/journeys/cards-management/src/**/*.ts",
+          "libs/journeys/cards-management/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

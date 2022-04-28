@@ -5,6 +5,7 @@
     "common-foundation-fonts-loader": "libs/common-foundation/fonts-loader",
     "common-ui-input-new-password": "libs/common-ui/input-new-password",
     "common-ui-input-ngx-mask-datepicker": "libs/common-ui/input-ngx-mask-datepicker",
+    "journeys-cards-management": "libs/journeys/cards-management",
     "journeys-identity-self-service": "libs/journeys/identity-self-service",
     "retail-usa": "apps/retail-usa",
     "retail-usa-e2e": "apps/retail-usa-e2e"
