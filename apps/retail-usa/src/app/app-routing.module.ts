@@ -178,9 +178,7 @@ const routes: Routes = [
           {
             path: 'manage-cards',
             loadChildren: () =>
-              import('../journeys/self-service/bundle-cards-management-journey.module').then(
-                (m) => m.CardsManagementJourneyBundleModule,
-              ),
+              import('@backbase/journeys/cards-management').then((m) => m.JourneysCardsManagementModule),
             data: {
               entitlements: PERMISSIONS.canViewManageCards,
             },
