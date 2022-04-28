@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/common-ui/input-ngx-mask-datepicker",
+  "sourceRoot": "libs/common-ui/input-ngx-mask-datepicker/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/common-ui/input-ngx-mask-datepicker/src/test.ts",
+        "tsConfig": "libs/common-ui/input-ngx-mask-datepicker/tsconfig.spec.json",
+        "karmaConfig": "libs/common-ui/input-ngx-mask-datepicker/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/common-ui/input-ngx-mask-datepicker/src/**/*.ts",
+          "libs/common-ui/input-ngx-mask-datepicker/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
