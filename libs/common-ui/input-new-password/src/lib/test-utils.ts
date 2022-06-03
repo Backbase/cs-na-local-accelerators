@@ -1,4 +1,4 @@
-import { AbstractControl, FormArray, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormArray, FormGroup, ValidationErrors } from '@angular/forms';
 import { NewPasswordValidatorConfiguration } from './input-new-password.configuration';
 
 export const MINIMUM_PASSWORD_LENGTH = 8;
