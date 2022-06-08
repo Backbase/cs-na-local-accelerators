@@ -4,14 +4,15 @@ import {
   INITIATE_PAYMENT_CONFIG,
   InitiatePaymentJourneyModule,
   INITIATE_PAYMENT_JOURNEY_COMMUNICATOR,
-  INTERNAL_TRANSFER,
+
   PayordOmniPaymentConfigProvider,
   ReviewScreens,
 } from '@backbase/initiate-payment-journey-ang';
 import { PaymentsCommunicationService } from '../../communication/payments-communication.service';
+import { RestrictedDatesModule, INTERNAL_TRANSFER } from '@backbase/common-transfers-restricted-dates';
 
 @NgModule({
-  imports: [InitiatePaymentJourneyModule.forRoot()],
+  imports: [RestrictedDatesModule, InitiatePaymentJourneyModule.forRoot()],
   providers: [
     PayordOmniPaymentConfigProvider,
     IdentityManagementServiceMocksProvider,

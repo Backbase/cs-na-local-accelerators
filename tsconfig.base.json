@@ -20,7 +20,9 @@
       "@backbase/common-banking": ["libs/common-banking/src/index.ts"],
       "@backbase/common-foundation-fonts-loader": ["libs/common-foundation/fonts-loader/src/index.ts"],
       "@backbase/common-ui-input-new-password": ["libs/common-ui/input-new-password/src/index.ts"],
-      "@backbase/journeys-identity-self-service": ["libs/journeys/identity-self-service/src/index.ts"]
+      "@backbase/journeys-identity-self-service": ["libs/journeys/identity-self-service/src/index.ts"],
+      "@backbase/common-transfers-restricted-dates": ["libs/common-transfers/restricted-dates/src/index.ts"],
+      "@backbase/common-data-transfers-dates-http-ang": ["libs/common-data/transfers-dates-http-ang/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

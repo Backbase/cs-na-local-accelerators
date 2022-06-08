@@ -4,6 +4,8 @@
     "common-banking": "libs/common-banking",
     "common-foundation-fonts-loader": "libs/common-foundation/fonts-loader",
     "common-ui-input-new-password": "libs/common-ui/input-new-password",
+    "common-transfers-restricted-dates": "libs/common-transfers/restricted-dates",
+    "common-data-transfers-dates-http-ang": "libs/common-data/transfers-dates-http-ang",
     "journeys-identity-self-service": "libs/journeys/identity-self-service",
     "retail-usa": "apps/retail-usa",
     "retail-usa-e2e": "apps/retail-usa-e2e"
