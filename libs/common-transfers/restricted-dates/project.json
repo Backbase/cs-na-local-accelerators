@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/common-transfers/restricted-dates",
+  "sourceRoot": "libs/common-transfers/restricted-dates/src",
+  "prefix": "bb",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/common-transfers/restricted-dates/src/test.ts",
+        "tsConfig": "libs/common-transfers/restricted-dates/tsconfig.spec.json",
+        "karmaConfig": "libs/common-transfers/restricted-dates/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/common-transfers/restricted-dates/src/**/*.ts", "libs/common-transfers/restricted-dates/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
